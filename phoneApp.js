@@ -3,7 +3,7 @@
 var operation;	// operation
 var selectid;
 var recIndex
-var socket = io.connect('http://cslab.kenyon.edu:8080');
+var socket = io.connect('http://cslab.kenyon.edu:8081');
 var rows;
 // Get results back from the server
 $(document).ready(function () {

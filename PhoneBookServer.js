@@ -15,7 +15,7 @@ con.connect(function(err) {
 var server = http.createServer(function(req, res) {
   var url = req.url;
   // If no path, get the index.html
-  if (url == "/") url = "/index.html";
+  if (url == "/") url = "/phoneApp.html";
   // get the file extension (needed for Content-Type)
   var ext = url.split('.').pop();
   //console.log(url + "  :  " + ext);
@@ -125,4 +125,4 @@ function UpdateRow(query,socket) {
 	});
 }
 //Everyone must use own port > 8000
-server.listen(8080);
+server.listen(8081);
