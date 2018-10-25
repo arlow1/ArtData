@@ -3,7 +3,8 @@
 var operation;	// operation
 var selectid;
 var recIndex
-var socket = io.connect('http://cslab.kenyon.edu:8081');
+var port='8081' // Must match port uses on server
+var socket = io.connect('http://cslab.kenyon.edu:'+port);
 var rows;
 // Get results back from the server
 $(document).ready(function () {
