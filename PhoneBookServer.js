@@ -26,24 +26,24 @@ var server = http.createServer(function(req, res) {
   var ext = url.split('.').pop();
   console.log(url + "  :  " + ext);
   // convert file type to correct Content-Type
-  var memeType = 'text/html'; // default
+  var mimeType = 'text/html'; // default
   switch (ext) {
     case 'css':
-      memeType = 'text/css';
+      mimeType = 'text/css';
       break;
     case 'png':
-      memeType = 'text/png';
+      mimeType = 'text/png';
       break;
     case 'jpg':
-      memeType = 'text/jpeg';
+      mimeType = 'text/jpeg';
       break;
     case 'js':
-      memeType = 'application/javascript';
+      mimeType = 'application/javascript';
       break;
   }
   // Send the requested file
   fs.readFile('.' + url, 'utf-8', function(error, content) {
-  res.setHeader("Content-Type", memeType);
+  res.setHeader("Content-Type", mimeType);
   res.end(content);
   });
 });
