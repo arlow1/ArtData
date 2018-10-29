@@ -1,6 +1,12 @@
 var mysql = require('mysql');
 var http = require('http');
 var fs = require('fs');
+
+//Everyone must use own port > 8000
+// Must Match client side port setting
+var port = 8081;
+
+// Login to MySQL
 var con = mysql.createConnection({
     host: "localhost",
     user: "skon",
@@ -11,7 +17,7 @@ con.connect(function(err) {
     	if (err) throw err;
 });
 
-// Set up the Web server
+// Set up the node.js Web server
 var server = http.createServer(function(req, res) {
   var url = req.url;
   // If no path, get the index.html
@@ -124,7 +130,5 @@ function UpdateRow(query,socket) {
     	});
 	});
 }
-//Everyone must use own port > 8000
-var port = 8081;
-console.log("Listening on port: "+port);
 server.listen(port);
+console.log("Listening on port: "+port);
